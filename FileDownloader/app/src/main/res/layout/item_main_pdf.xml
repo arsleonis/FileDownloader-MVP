@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginEnd="@dimen/medium_margin">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivFirstPage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimaryLight"
+        android:contentDescription="@string/main_iv_description_download_status"
+        android:minWidth="300dp"
+        android:minHeight="300dp"
+        android:padding="@dimen/small_margin"
+        android:scaleType="centerCrop" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvShowProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginBottom="@dimen/big_margin"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/views_text_size"
+        android:visibility="gone" />
+
+    <androidx.core.widget.ContentLoadingProgressBar
+        android:id="@+id/pbShowProgress"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/medium_margin"
+        android:layout_gravity="bottom"
+        android:layout_marginStart="@dimen/medium_margin"
+        android:layout_marginEnd="@dimen/medium_margin"
+        android:layout_marginBottom="@dimen/medium_margin"
+        android:theme="@style/ProgressBarTheme"
+        android:visibility="gone" />
+</androidx.cardview.widget.CardView>
+

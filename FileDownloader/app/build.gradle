@@ -1,0 +1,78 @@
+apply plugin: "com.android.application"
+apply plugin: "kotlin-android"
+apply plugin: "kotlin-android-extensions"
+apply plugin: "kotlin-kapt"
+
+android {
+    compileSdkVersion 29
+    defaultConfig {
+        applicationId "com.zrz.android.filedownloader"
+        minSdkVersion 19
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        buildConfigField "String", "DB_NAME", "\"fd_database\""
+        buildConfigField "int", "DB_VERSION", "1"
+        buildConfigField "String", "NO_IMAGE", "\"empty\""
+        buildConfigField "String", "IMAGE_POSTFIX", "\"_image\""
+        buildConfigField "String", "FILE_DIR_PATH", "\"/data/data/com.zrz.android.filedownloader/cache/\""
+        buildConfigField "String", "THUMBNAILS_DIR_PATH", "\"/data/data/com.zrz.android.filedownloader/cache/thumbnails/\""
+        buildConfigField "String", "ACTIVITY_UUID", "\"activity_uuid\""
+        buildConfigField "String", "BUNDLE_EXTRA_KEY", "\".key_bundle.\""
+        buildConfigField "String", "INTENT_EXTRA_KEY", "\".key_intent.\""
+        buildConfigField "String", "KEY_FILE_PATH", "\"key_file_path\""
+        buildConfigField "String", "KEY_START_SERVICE_COMMAND", "\"key_start_service_command\""
+        buildConfigField "String", "KEY_PDF_RESOURCE", "\"key_pdf_resource\""
+        buildConfigField "String", "KEY_ID", "\"key_id\""
+        buildConfigField "String", "COMMAND_START_SERVICE_IN_FOREGROUND", "\"start_service_in_foreground\""
+        buildConfigField "String", "COMMAND_START_SERVICE_IN_BACKGROUND", "\"start_service_in_background\""
+        buildConfigField "String", "COMMAND_STOP_SERVICE", "\"stop_service\""
+        buildConfigField "int", "ID_DEFAULT_VALUE", "-1"
+        buildConfigField "String", "DOWNLOAD_SERVICE_CHANNEL_ID", "\"1234\""
+        buildConfigField "int", "PROGRESS_START_INDEX_VALUE", "0"
+        buildConfigField "int", "PROGRESS_FINISH_INDEX_VALUE", "100"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
+        }
+    }
+}
+
+dependencies {
+    def lifecycle_version = "2.0.0"
+
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    implementation "androidx.core:core-ktx:1.0.2"
+    implementation "androidx.appcompat:appcompat:1.0.2"
+
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-runtime:$lifecycle_version"
+    kapt "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
+
+    implementation "androidx.constraintlayout:constraintlayout:1.1.3"
+    implementation "androidx.cardview:cardview:1.0.0"
+    implementation "androidx.recyclerview:recyclerview:1.0.0"
+
+    implementation "android.arch.persistence.room:runtime:1.1.1"
+    kapt "android.arch.persistence.room:compiler:1.1.1"
+
+    implementation "com.squareup.okhttp3:okhttp:4.0.0"
+
+    implementation "com.github.barteksc:android-pdf-viewer:2.8.2"
+    implementation "com.github.barteksc:pdfium-android:1.9.0"
+
+    implementation "com.github.bumptech.glide:glide:4.9.0"
+    annotationProcessor "com.github.bumptech.glide:compiler:4.9.0"
+
+    implementation "com.facebook.stetho:stetho:1.5.1"
+}
+
+androidExtensions {
+    experimental = true
+}

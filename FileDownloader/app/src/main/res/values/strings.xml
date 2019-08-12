@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">FileDownloader</string>
+    <string name="app_preferences">fd_pref</string>
+    <string name="app_first_launch">first_launch</string>
+    <string name="main_tv_title_hint">Resources</string>
+    <string name="main_btn_show_pdf">Show PDF</string>
+    <string name="main_iv_description_download_status">download status</string>
+    <string name="file_start_downloading">Start downloading…</string>
+    <string name="file_downloaded">File downloaded</string>
+    <string name="file_is_not_downloaded">File is not downloaded</string>
+    <string name="file_deleted">File deleted</string>
+    <string name="download_file_from">Download file from:</string>
+    <string name="download_service_notification_channel_name">Download service</string>
+    <string name="download_service_notification_channel_description">File download</string>
+    <string name="file_dir_is_not_exists">Files directory is not exists</string>
+    <string name="thumbnail_dir_is_not_exists">Thumbnails directory is not exists</string>
+    <string name="the_type">The specified repository type</string>
+    <string name="was_not_found">was not found</string>
+</resources>
