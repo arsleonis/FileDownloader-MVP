@@ -6,11 +6,11 @@ import com.zrz.android.filedownloader.entity.PDFResource
 
 class NetworkService : BaseNetworkService() {
 
-    override fun getNotificationText(resource: Parcelable): String = (resource as PDFResource).urlAddress
+    override fun getNotificationText(res: Parcelable): String = (res as PDFResource).urlAddress
 
-    override fun startServiceInBackground(resource: Parcelable, id: Int) {
-        doAsyncDownload(resource as PDFResource, id) { res, id_, response ->
-            networkManager.completeDownload(res, id_, response)
+    override fun startServiceInBackground(res: Parcelable, id: Int) {
+        doAsyncDownload(res as PDFResource, id) { res_, id_, response ->
+            networkManager.completeDownload(res_, id_, response)
         }
     }
 
